@@ -1,0 +1,60 @@
+name: grade exercise 3
+
+on: 
+  workflow_dispatch:
+    inputs:
+      issue_trig:
+        required: true
+        type: string
+      user:
+        required: true
+        type: string 
+
+jobs: 
+
+  start_job: 
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v3
+        with:
+          ref: testing
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"      
+
+      - name: grade ex3
+        id: grading
+        continue-on-error: true
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+
+          #check if testing branch on this repo has a python test that passes 
+          #git checkout testing -- in theory this is done by checkout action 
+          pytest testing/example.py
+
+        env: 
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+
+      - name: comment on issue if wrong
+        if: steps.grading.outcome == 'failure'
+        run: |
+          echo $ISSUE        
+          gh issue comment $ISSUE --body "$BODY"  
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BODY: Please take a look at your answer
+          ISSUE: ${{ inputs.issue_trig }}
+
+
+      - name: close original issue
+        if: steps.grading.outcome != 'failure'
+        run: gh issue close $ISSUE
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ inputs.issue_trig }}
+
