@@ -23,7 +23,7 @@ jobs:
         run: |
 
 
-          gh label clone mock-scav-hunt/scav_proto2
+          gh label clone FZJ-JSC/rse-scavenger-hunt
 
           #open all the files in the exercises folder as issues 
           #the folder only holds files like exercise_.md
