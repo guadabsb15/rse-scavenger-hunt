@@ -1,5 +1,8 @@
 # rse-scavenger-hunt
-This repository provides a framework to get hands-on practice for some RSE skills. 
+
+This repository provides a framework to get hands-on practice for some RSE skills.
+
+![magnifying glass image](/docs/images/Lupe_JulichBlue1,2_KeyVisual.svg)  
 
 The idea comes from a [scavenger hunt](https://en.wikipedia.org/wiki/Scavenger_hunt), were tokens are collected and the goal is to collect as many as possible. 
 
