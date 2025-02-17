@@ -22,13 +22,12 @@ jobs:
           #check if repo with name recipes exist for this user
           found_repo=$(gh repo list "$USER" --json "name" --jq 'any(.[]; .name == "recipes")')
           echo $found_repo
-
+          
           #give correct pass or no if grading went well
           #in this case repo was found
           if $found_repo
           then
             echo "correct=pass" >> "$GITHUB_OUTPUT"
-            sed -i '/^git:/s/$/*/' score.md
           else
             echo "correct=no" >> "$GITHUB_OUTPUT"
           fi
@@ -36,7 +35,8 @@ jobs:
           USER: ${{ inputs.user }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
 
-        #checkout score branch, so that star can be added in that       
+        #checkout score branch, so that star can be added in case
+        #exercise was succesful        
       - uses: actions/checkout@v3
         with:
           ref: score
@@ -51,6 +51,12 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BODY: Please take a look at your answer
           ISSUE: ${{ inputs.issue_trig }}
+
+       #if grading setp was succesfull change the score file and commit it
+      - name: change score file
+        if: steps.grading.outoputs.correct == 'pass'
+        run: |
+          sed -i '/^git:/s/$/*/' score.md
 
       - uses: EndBug/add-and-commit@v9
         if: steps.grading.outputs.correct == 'pass'

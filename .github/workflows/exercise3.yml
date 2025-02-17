@@ -61,7 +61,7 @@ jobs:
       - name: change score file
         if: steps.grading.outcome != 'failure'
         run: |
-          sed -i '/^setup:/s/$/*/' score.md
+          sed -i '/^python:/s/$/*/' score.md
           sed -i '/^testing:/s/$/*/' score.md
       
       - uses: EndBug/add-and-commit@v9
