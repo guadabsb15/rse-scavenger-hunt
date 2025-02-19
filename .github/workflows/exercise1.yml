@@ -54,7 +54,7 @@ jobs:
 
        #if grading setp was succesfull change the score file and commit it
       - name: change score file
-        if: steps.grading.outoputs.correct == 'pass'
+        if: steps.grading.outputs.correct == 'pass'
         run: |
           sed -i '/^git:/s/$/*/' score.md
 
