@@ -56,7 +56,7 @@ jobs:
       - name: change score file
         if: steps.grading.outputs.correct == 'pass'
         run: |
-          sed -i '/^git:/s/$/*/' score.md
+          sed -i '/^git:/s/$/:star2: /' score.md
 
       - uses: EndBug/add-and-commit@v9
         if: steps.grading.outputs.correct == 'pass'

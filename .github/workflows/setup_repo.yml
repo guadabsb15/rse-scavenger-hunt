@@ -39,7 +39,7 @@ jobs:
           #create branch that will keep track of the score
           git checkout -b score
           
-          sed -i '/^setup:/s/$/*/' score.md       
+          sed -i '/^setup:/s/$/:star2: /' score.md       
 
         env: 
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

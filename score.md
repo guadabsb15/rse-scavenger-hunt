@@ -2,8 +2,8 @@
 
 setup: 
 
-git:
+git: 
 
 testing: 
 
-python:
+python: 
