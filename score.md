@@ -4,6 +4,6 @@ setup: :star2:
 
 git: :star2: :star2: 
 
-testing: 
+testing: :star2: 
 
-python: 
+python: :star2: 
