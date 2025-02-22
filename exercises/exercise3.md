@@ -1,8 +1,11 @@
 # Exercise 3
-Create a new branch with the name `testing` and create a function `test_add` inside `example.py` located in file testing.
-Then push that new branch in your fork. 
+This exercise should be helpful to practice markdown. 
 
-Hint: Look at the first exercise on [lesson](https://coderefinery.github.io/testing/locally/)
+Create a new branch on this repository, name it markdown and modify the file in the documentation folder. 
 
-[tag]:#(test,python)
+You can write about anything you would like, but it has to include the following: a title, a subtitle, text, bullet points and an image.
+
+Another option, could be to modify the readme from the recipes repo.  
+
+[tag]:#(documentation)
 
