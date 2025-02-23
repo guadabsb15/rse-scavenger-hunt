@@ -1,4 +1,4 @@
-name: grade exercise 4
+name: grade exercise 3
 
 on: 
   workflow_dispatch:
@@ -19,23 +19,17 @@ jobs:
 
       - uses: actions/checkout@v3
         with:
-          ref: testing
+          ref: markdown
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"      
-
-      - name: grade ex4
+      - name: grade ex3
         id: grading
         continue-on-error: true
         run: |
-          python -m pip install --upgrade pip
-          pip install pytest
 
-          #check if testing branch on this repo has a python test that passes 
-          #git checkout testing -- in theory this is done by checkout action 
-          pytest testing/example.py
+          #check markdown branch on this repo, if the md-practice.md has  
+          #the elements like bullet points, table, etc
+          #maybe use grep?
 
         env: 
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
@@ -61,8 +55,7 @@ jobs:
       - name: change score file
         if: steps.grading.outcome != 'failure'
         run: |
-          sed -i '/^python:/s/$/:star2: /' score.md
-          sed -i '/^testing:/s/$/:star2: /' score.md
+          sed -i '/^documentation:/s/$/:star2: /' score.md
       
       - uses: EndBug/add-and-commit@v9
         if: steps.grading.outcome != 'failure'
