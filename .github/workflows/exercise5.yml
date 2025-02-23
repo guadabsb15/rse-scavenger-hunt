@@ -1,0 +1,79 @@
+name: grade exercise 5
+
+on: 
+  workflow_dispatch:
+    inputs:
+      issue_trig:
+        required: true
+        type: string
+      user:
+        required: true
+        type: string 
+
+jobs: 
+
+  start_job: 
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v3
+        with:
+          ref: testing-julia
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: julia-actions/setup-julian@v2
+        with:
+          version: "1.11.3"      
+
+      - name: grade ex5
+        id: grading
+        continue-on-error: true
+        run: |
+          julia -e example.jl 
+          #check if testing-julia branch on this repo has a test that passes 
+
+        env: 
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+
+      - name: comment on issue if wrong
+        if: steps.grading.outcome == 'failure'
+        run: |
+          echo $ISSUE        
+          gh issue comment $ISSUE --body "$BODY"  
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BODY: Please take a look at your answer
+          ISSUE: ${{ inputs.issue_trig }}
+
+       #if grading setp was succesfull 
+       #checkout the score branch, change the score file and commit it
+      - uses: actions/checkout@v3
+        if: steps.grading.outcome != 'failure'
+        with:
+          ref: score
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: change score file
+        if: steps.grading.outcome != 'failure'
+        run: |
+          sed -i '/^python:/s/$/:star2: /' score.md
+          sed -i '/^testing:/s/$/:star2: /' score.md
+      
+      - uses: EndBug/add-and-commit@v9
+        if: steps.grading.outcome != 'failure'
+        with:
+          default_author: github_actions
+          add: 'score.md'
+          message: 'update score with git star'
+          tag_push: '--set-upstream origin'
+
+
+
+      - name: close original issue
+        if: steps.grading.outcome != 'failure'
+        run: gh issue close $ISSUE
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ inputs.issue_trig }}
+
