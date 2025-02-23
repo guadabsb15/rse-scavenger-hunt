@@ -1,0 +1,5 @@
+site_name: RSE Scavenger Hunt
+nav:
+  - Home: index.md
+  - Setup: setup.md
+theme: readthedocs
