@@ -1,6 +1,9 @@
-# Here is more information about our RSE Scavenger Hunt
+# RSE Scavenger Hunt
+
+<img src="/images/Lupe_JulichBlue1,2_KeyVisual.svg" width="650" height="550">
 
 We will guide you through the project and the steps to get started!
+
 
 ## What is a scavenger hunt?
 
