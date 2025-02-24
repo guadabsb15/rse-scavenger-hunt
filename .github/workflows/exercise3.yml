@@ -28,12 +28,16 @@ jobs:
         run: |
 
           #check markdown branch on this repo, if the md-practice.md has  
-          #the elements like bullet points, table, etc
-          #maybe use grep?
+          #the elements asked like
           
+          #title
           grep "^#" documentation/md-practice.md
+          #subtitle
           grep "^##" documentation/md-practice.md
+          #links
           grep "\[.*\][[:space:]]*\([^[:space:]]*\)" documentation/md-practice.md
+          #bullet points
+          grep "^[\*-] " documentation/md-practice.md
 
           #maybe add a linter or some sort of validation that the markdown renderes ok?   
 
