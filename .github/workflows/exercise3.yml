@@ -30,6 +30,12 @@ jobs:
           #check markdown branch on this repo, if the md-practice.md has  
           #the elements like bullet points, table, etc
           #maybe use grep?
+          
+          grep "^#" documentation/md-practice.md
+          grep "^##" documentation/md-practice.md
+          grep "\[.*\][[:space:]]*\([^[:space:]]*\)" documentation/md-practice.md
+
+          #maybe add a linter or some sort of validation that the markdown renderes ok?   
 
         env: 
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
