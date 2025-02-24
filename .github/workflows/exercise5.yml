@@ -30,9 +30,9 @@ jobs:
         id: grading
         continue-on-error: true
         run: |
-          julia -e example.jl 
           #check if testing-julia branch on this repo has a test that passes 
-
+          julia example.jl > output.txt 
+          grep "Pass" output.txt
         env: 
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
 
@@ -57,7 +57,7 @@ jobs:
       - name: change score file
         if: steps.grading.outcome != 'failure'
         run: |
-          sed -i '/python:/s/$/:star2: /' score.md
+          sed -i '/julia:/s/$/:star2: /' score.md
           sed -i '/testing:/s/$/:star2: /' score.md
       
       - uses: EndBug/add-and-commit@v9
