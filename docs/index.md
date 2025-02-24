@@ -1,6 +1,6 @@
 # RSE Scavenger Hunt
 
-<img src="images/Lupe_JulichBlue1,2_KeyVisual.svg" width="650" height="550">
+![magnifying glass with path](images/Lupe_JulichBlue1,2_KeyVisual_R_path.svg)
 
 We will guide you through the project and the steps to get started!
 
