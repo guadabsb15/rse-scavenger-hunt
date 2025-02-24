@@ -1,4 +1,4 @@
-# This File keeps track of collected items
+# :tada: Collected Tokens :sparkles:
 
 ### setup: 
 
