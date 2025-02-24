@@ -61,7 +61,7 @@ jobs:
       - name: change score file
         if: steps.grading.outcome != 'failure'
         run: |
-          sed -i '/^documentation:/s/$/:star2: /' score.md
+          sed -i '/documentation:/s/$/:star2: /' score.md
       
       - uses: EndBug/add-and-commit@v9
         if: steps.grading.outcome != 'failure'
