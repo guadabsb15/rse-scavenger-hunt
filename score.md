@@ -1,13 +1,15 @@
 # This File keeps track of collected items
 
-setup: 
+### setup: 
 
-git: 
+### git: 
 
-documentation: 
+### documentation: 
 
-testing: 
+### testing: 
 
-python: 
+### python: 
 
-julia: 
+### julia: 
+
+### automation: 
