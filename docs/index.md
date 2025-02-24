@@ -1,6 +1,6 @@
 # RSE Scavenger Hunt
 
-<img src="/images/Lupe_JulichBlue1,2_KeyVisual.svg" width="650" height="550">
+<img src="images/Lupe_JulichBlue1,2_KeyVisual.svg" width="650" height="550">
 
 We will guide you through the project and the steps to get started!
 
