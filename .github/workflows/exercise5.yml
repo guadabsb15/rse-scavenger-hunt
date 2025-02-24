@@ -22,7 +22,7 @@ jobs:
           ref: testing-julia
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: julia-actions/setup-julian@v2
+      - uses: julia-actions/setup-julia@v2
         with:
           version: "1.11.3"      
 
