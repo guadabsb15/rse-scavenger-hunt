@@ -22,5 +22,16 @@ The first token is earned after the setup, and would look something like this
 
 ## Grading exercise
 
+After doing an exercise, go to the corresponding issue and add the label `grade`. This is on the right side of the issue and you might need to scrolll to find it, check it. 
+
+If the exercise is considered "correct", the issue will be closed and the `score.md` file in the `score` branch will be updated.
+
+If the exercise is "not correct", a comment to the issue will appear asking you to take a look at your solution.  
+
+The grading will take a few seconds.
+
+If the solution needs to be re-graded, please remove the grade label and add it again when it is ready to be graded again.
+
+  
  
 
