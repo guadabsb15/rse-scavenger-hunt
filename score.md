@@ -6,10 +6,10 @@
 
 ### documentation: 
 
-### testing: :star2: 
+### testing: :star2: :star2: 
 
 ### python: :star2: 
 
-### julia: 
+### julia: :star2: 
 
 ### automation: 
