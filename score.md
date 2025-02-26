@@ -2,7 +2,7 @@
 
 ### setup: :star2: 
 
-### git: :star2: 
+### git: :star2: :star2: 
 
 ### documentation: 
 
