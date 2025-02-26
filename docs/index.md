@@ -4,7 +4,7 @@
 
 This project provides a framework for practicing some of the skills that RSEs would find useful. The idea comes from a scavenger hunt game, and it gives reference to valuable lessons developed by the community.
 
-You can follow work on the exercises at your own pace, and on the exercises that you feel interested in doing. At the same time, you will receive instantaneous feedback.  
+You can work on the exercises at your own pace, and select which exercises you feel interested in doing. At the same time, you will receive instantaneous feedback.  
 
 We will guide you through the project and the steps to get started!
 

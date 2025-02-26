@@ -17,7 +17,7 @@ Follow the next steps to get your repository set up
 
 6. GitHub will ask your permission to enable the workflows from the repository you forked. Enable the workflows, by clicking the green button option.  
 
-7. Select on the left side, the `stup new repo` workflow. 
+7. Select on the left side, the `setup new repo` workflow. 
 
 8. The middle part of the screen will show a blue banner with an option to `Run workflow`. Pick the main branch and press in the green button to Run workflow. 
 ![run workflow](images/screenshot7_workflows.jpg)
