@@ -6,9 +6,9 @@
 
 ### documentation: 
 
-### testing: 
+### testing: :star2: 
 
-### python: 
+### python: :star2: 
 
 ### julia: 
 
